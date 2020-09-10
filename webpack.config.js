@@ -4,6 +4,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './client/index.js',
+    mode: 'development',
     output: {
         path: path.join(__dirname, '/dist'),
         filename: 'bundle.js'
@@ -30,8 +31,29 @@ module.exports = {
                   // Compiles Sass to CSS
                   'sass-loader',
                 ],
-              }
+              },
+              {
+                test: /\.(png|jp(e*)g|svg|gif)$/,
+                use: [
+                  {
+                    loader: 'file-loader',
+                    options: {
+                      name: 'images/[hash]-[name].[ext]',
+                    },
+                  },
+                ],
+              },
+              {
+                test: /\.svg$/,
+                use: ['@svgr/webpack'],
+              },
         ]
+    },
+    devServer: {
+        publicPath: '/dist/',
+        proxy: {
+            '/': 'http://localhost:3000'
+        }
     },
     plugins: [
         new HtmlWebPackPlugin({

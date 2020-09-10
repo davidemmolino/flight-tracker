@@ -16,6 +16,10 @@ app.get('/', (req, res) => {
     res.status(200).sendFile(path.join(__dirname, '../index.html'));
 })
 
+app.post('/form-info', (req, res) => {
+    res.send(`all good here!`)
+})
+
 app.use('*', (req, res) => {
     res.status(404).send({
         error: 'Error, page not found.'

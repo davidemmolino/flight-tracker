@@ -1,28 +1,37 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import FlightContainers from './FlightContainers.jsx';
+import * as actions from '../actions/actions'
 
-//mapStateToProps
-//mapDispatchToAction?
+const mapStateToProps = state => ({
+    modal: state.flights.modal
+})
+const mapDispatchToProps = dispatch => ({
+    changeModal: () => dispatch(actions.changeModal())
+})
 
 //smart component
-export default class MainContainer extends Component {
+class MainContainer extends Component {
     constructor(props) {
         super(props)
-
-        this.state = {
-            name: 'hello'
-        }
     }
     // should render FlightContainers component aka flight cards
     //reads data from state
 
+    //onClick opens a modal input form
+
     render() {
+        console.log(`props`, this.props)
         return (
-            <div>
-                <h1>Hello this is the H1 in the react component!</h1>
-                <FlightContainers testing={this.state.name} />
+            <div >
+                <div className="welcome">
+                    <h1>Welcome!</h1>
+                    <p>Start by adding a city! props</p>
+                </div>
+                <FlightContainers modal={this.props.changeModal}/>
             </div>
         )
     }
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainContainer);
