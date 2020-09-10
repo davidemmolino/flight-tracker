@@ -4,6 +4,7 @@ import { Field, reduxForm } from 'redux-form';
 
 let ContactForm = (props) => {
     const { handleSubmit } = props;
+    console.log('this is handle submit', handleSubmit);
     //send POST to server with field inputs
     let sendPost = () => {
         fetch('/modal', {
@@ -12,12 +13,13 @@ let ContactForm = (props) => {
             body: JSON.stringify(handleSubmit)
         })
         .then((data) => {
-            return data.json()
+            data.json()
          })
         .then((done) => {
-            props.submitHandler()
+            props.submitHandler(done)
             props.changeModal()
-            return console.log('this is', done)
+            console.log('*****', done)
+            return 
         })
         .catch((err) => console.log(`error here`, err))
     }

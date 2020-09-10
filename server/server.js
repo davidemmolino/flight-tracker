@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
 
 //middleware that recognizes an incoming request obj as a JSON obj and makes it into a JS obj.
-app.use(bodyParser.json());
+app.use(express.json());
 
 //server css style
 app.use('/public', express.static('public')); 
@@ -32,7 +32,7 @@ app.use('*', (req, res) => {
 app.use((err, req, res, next) => {
     const defaultErr = {
         log: 'express error handler caught unknown middleware error',
-        status: 400,
+        status: 500,
         message: { err: 'An error happened' },
       };
       const errorObj = { ...defaultErr, ...err };

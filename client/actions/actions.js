@@ -21,6 +21,4 @@ export const addTrip = (values) => ({
 export const changeModal = (modal) => ({
     type: types.CHANGE_MODAL,
     payload: modal
-    //insert modal type and props?
-    //boolean value of modal
 })

@@ -13,7 +13,7 @@ const mapStateToProps = state => ({
 //referenced using props
 const mapDispatchToProps = dispatch => ({
     changeModal: () => dispatch(actions.changeModal()),
-    addTrip: (values) => dispatch(actions(actions.addTrip(values)))
+    addTrip: (values) => dispatch(actions.addTrip(values))
 })
 
 class FlightContainers extends Component {
