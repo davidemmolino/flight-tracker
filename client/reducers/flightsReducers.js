@@ -1,15 +1,19 @@
-import * as types from '../actions/actions';
+import * as types from '../constants/actionTypes';
+import { formValueSelector } from 'redux-form';
 
 const initialState = {
-    flights: [],
-    location: '',
-    arrival: '',
-    departure: '',
+    flights: [{
+        location: '',
+        arrival: '',
+        departure: '',
+        airline: ''
+    }],
     modal: false,
+
 };
 
 const flightsReducer = (state = initialState, action) => {
-    let flights;
+    let airline;
     let location;
     let arrival; 
     let departure;
@@ -17,9 +21,9 @@ const flightsReducer = (state = initialState, action) => {
 
     switch(action.type) {
         //change modal boolean
-        case types.changeModal: 
+        case types.CHANGE_MODAL:
             console.log(`clicked and opened a modal`)
-            if (modal === false) {
+            if (state.modal === false) {
                modal = true 
             } else {
                 modal = false
@@ -31,15 +35,18 @@ const flightsReducer = (state = initialState, action) => {
             };
 
         //adding a trip
-        case types.addTrip:
+        case types.ADD_TRIP:
+            console.log('whe are we not goign in here', action.payload.values)
             let newFlights = {
-                arrival : arrival,
-                departure : departure,
-                location : location,
-                flights : flights,
+                location : action.payload.values.location,
+                arrival : action.payload.values.arrival,
+                departure : action.payload.values.departure,
+                airline : action.payload.values.airline,
             }
-            flights = state.location.slice();
-            flights.push(newFlights)
+            console.log('these are the new flights', newFlights)
+
+            airline = state.flights.slice();
+            airline.flights.push(newFlights);
 
             return {
                 ...state,

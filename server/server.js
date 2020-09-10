@@ -8,16 +8,18 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
 //server css style
-app.use(express.static('public'));
-app.use('/css', express.static(__dirname + 'public/styles'));
+app.use('/public', express.static('public')); 
+// app.use('/css', express.static(__dirname + 'public'));
+app.use('/dist', express.static('dist'))
 
 //serve index.html
 app.get('/', (req, res) => {
     res.status(200).sendFile(path.join(__dirname, '../index.html'));
 })
 
-app.post('/form-info', (req, res) => {
-    res.send(`all good here!`)
+app.post('/modal', (req, res) => {
+    console.log(req.body)
+    res.json(`all good here!`)
 })
 
 app.use('*', (req, res) => {

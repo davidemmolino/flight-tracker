@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+    
+ body {
+    background: url(https://www.figma.com/file/Kx0K0vXmpKyYB3lNrkbIvu/Solo-Proj-layout?node-id=4%3A101);
+}  
+
+.welcome {
+    text-align: center;
+    padding: 5px;
+    color: red;
+    width: 100%;
+}
+
+/* Rectangle 1 */
+ 
+.bg1 {
+    position: absolute;
+    width: 493.24px;
+    height: 1116.86px;
+    left: -88px;
+    top: -288px;
+    background: rgba(196, 196, 196, 0.5);
+}
+
+
+/* Rectangle 2 */
+
+.bg2 {
+    position: absolute;
+    width: 493.24px;
+    height: 1116.86px;
+    left: -41.96px;
+    top: -232.98px;
+    background: rgba(237, 125, 125, 0.5);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Rectangle 3 */
+.bg3 {
+
+    position: absolute;
+    width: 493.24px;
+    height: 1116.86px;
+    left: 2.76px;
+    top: -177.96px;
+    
+    background: rgba(200, 69, 69, 0.5);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* modal */
+.modal {
+    width: 300px;
+    height: 300px;
+    margin: 200px auto;
+    padding: 15px;
+    border: 1px gray solid;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 4px 4px 300px rgba(0, 0, 0, 0.35);
+}
+
+.flight-card {
+    background: rgba(228, 214, 214, 0.5);
+    box-shadow: 0px 4px 3px -1px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    height: 120px;
+    width: 330px;
+    margin: 0 auto;
+}

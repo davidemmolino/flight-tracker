@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import FlightContainers from './FlightContainers.jsx';
 import * as actions from '../actions/actions'
+import Welcome from '../components/Welcome.jsx';
 
 const mapStateToProps = state => ({
     modal: state.flights.modal
 })
+
 const mapDispatchToProps = dispatch => ({
     changeModal: () => dispatch(actions.changeModal())
 })
@@ -14,6 +16,14 @@ const mapDispatchToProps = dispatch => ({
 class MainContainer extends Component {
     constructor(props) {
         super(props)
+        this.flightHandler = this.flightHandler.bind(this)
+    }
+
+    conditionalRender() {
+        this.props.fields === false ? <Welcome /> : <FlightContainers />
+    }
+    flightHandler() {
+        
     }
     // should render FlightContainers component aka flight cards
     //reads data from state
@@ -24,10 +34,7 @@ class MainContainer extends Component {
         console.log(`props`, this.props)
         return (
             <div >
-                <div className="welcome">
-                    <h1>Welcome!</h1>
-                    <p>Start by adding a city! props</p>
-                </div>
+                <button onClick={() => this.props.changeModal}>Start!</button>
                 <FlightContainers modal={this.props.changeModal}/>
             </div>
         )

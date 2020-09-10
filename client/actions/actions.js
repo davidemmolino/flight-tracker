@@ -2,14 +2,9 @@ import * as types from '../constants/actionTypes'
 
 //add a trip
 //note sure what kind of payload to enter
-export const addTrip = () => ({
+export const addTrip = (values) => ({
     type: types.ADD_TRIP,
-    payload: {
-        city, 
-        departure, 
-        arrival,
-        airline
-    }
+    payload: values
 });
 
 //remote a trip
@@ -23,8 +18,9 @@ export const addTrip = () => ({
 //     payload: city
 // });
 
-export const changeModal = () => ({
+export const changeModal = (modal) => ({
     type: types.CHANGE_MODAL,
+    payload: modal
     //insert modal type and props?
     //boolean value of modal
 })

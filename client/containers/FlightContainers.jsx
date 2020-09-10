@@ -1,49 +1,51 @@
 //dumb component
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions/actions'
+import Form from './Form.jsx';
 import Modal from 'react-modal';
+import FlightInfo from '../components/FlightInfo.jsx'
 
-//dispatch an action to change modal to true or false
-//add to state a property to check if modal is true or false
-const FlightContainers = (props) => {
-    const clickHandler = () => {
-        fetch('/', {
-            headers: { "Content-Type": "application/json"},
-            method: "POST",
-            body: JSON.stringify(props.modal)
-        })
-        .then((data) => {
-            console.log(data)
-            data.json()
-        })
-        .catch((err) => console.log(err))
+const mapStateToProps = state => ({
+    modal: state.flights.modal,
+    addTrip: state.flights.flights
+})
+//referenced using props
+const mapDispatchToProps = dispatch => ({
+    changeModal: () => dispatch(actions.changeModal()),
+    addTrip: (values) => dispatch(actions(actions.addTrip(values)))
+})
+
+class FlightContainers extends Component {
+    constructor(props) {
+        super(props) 
+        this.submit = this.submit.bind(this);
+        this.submitHandler = this.submitHandler.bind(this)
     }
-    return (
-        <div>
-            <h1>this is my prop obj</h1>
-            <button onClick={() => clickHandler()}>Click me to show modal</button>
-            <Modal isOpen={props.modal} className="modal">
-                <form action="ADD_TRIP" method="post" onSubmit={() => console.log(`hello`)}>
-                    <label htmlFor="flight_info">Enter your flight details:</label>
-                    <div>
-                        <p>City</p>
-                        <input type="text" name="flight_info"/>
-                        <br/>
-                        <p>Departure</p>
-                        <input type="text" name="flight_info"/>
-                        <br/>
-                        <p>Arrival</p>
-                        <input type="text" name="flight_info"/>
-                        <br/>
-                        <p>Airline</p>
-                        <input type="text" name="flight_info"/>
-                    </div>
-                <button type="submit">Go!</button>
-                </form>
-            </Modal>
-        </div>
-    )
+
+    submit(values) {
+        console.log(values)
+    }
+
+    submitHandler(values) {
+        actions.addTrip(values)
+    }
+
+    render () {
+        // let flightCards = FlightInfo.map((el) => {
+        //     // if(el !== undefined) 
+        // });
+        return (
+            <div>
+                <h1>this is my prop obj</h1>
+                <button onClick={() => this.props.changeModal()}>Click me to show modal</button>
+                {/* { flightCards } */}
+                <Modal isOpen={this.props.modal} ariaHideApp={false} className="modal">
+                    <Form onSubmit={this.submit} submitHandler={this.submitHandler} changeModal={this.props.changeModal} addTrip={this.props.addTrip}/>
+                </Modal>
+            </div>
+        )
+    }
 }
 
-export default FlightContainers;
+export default connect(mapStateToProps, mapDispatchToProps)(FlightContainers);
