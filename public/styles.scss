@@ -1,6 +1,11 @@
 body {
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
+}
+
+hr {
+    width: 90%;
 }
     
  body {
@@ -14,41 +19,21 @@ body {
     width: 100%;
 }
 
-/* Rectangle 1 */
- 
-.bg1 {
-    position: absolute;
-    width: 493.24px;
-    height: 1116.86px;
-    left: -88px;
-    top: -288px;
-    background: rgba(196, 196, 196, 0.5);
+.landing-text {
+    text-align: center;
+    margin: 15px;
 }
 
-
-/* Rectangle 2 */
-
-.bg2 {
-    position: absolute;
-    width: 493.24px;
-    height: 1116.86px;
-    left: -41.96px;
-    top: -232.98px;
-    background: rgba(237, 125, 125, 0.5);
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-/* Rectangle 3 */
-.bg3 {
-
-    position: absolute;
-    width: 493.24px;
-    height: 1116.86px;
-    left: 2.76px;
-    top: -177.96px;
-    
-    background: rgba(200, 69, 69, 0.5);
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+.button-purple {
+    background: #B592FF;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    color: white;
+    font-size: 23px;
+    text-align: center;
+    line-height: 10px;
 }
 
 /* modal */
@@ -63,7 +48,17 @@ body {
     box-shadow: 0px 4px 4px 300px rgba(0, 0, 0, 0.35);
 }
 .modal div {
-    margin: 5px auto;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.modal button {
+    margin-left: 110px;
+    margin-top: 15px;
+    width: 80px;
+    height: 35px;
+    border: none;
+    background-color: rgba(200, 69, 69, 0.5);
 }
 
 .flight-card {
@@ -73,4 +68,9 @@ body {
     height: 120px;
     width: 330px;
     margin: 0 auto;
+    margin-top: 15px;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 70%;
+    padding-left: 10px;
 }

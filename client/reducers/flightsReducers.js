@@ -1,13 +1,14 @@
 import * as types from '../constants/actionTypes';
-import { formValueSelector } from 'redux-form';
+// import { formValueSelector } from 'redux-form';
 
 const initialState = {
-    flights: [{
+    flights: [],
+    flightInfo: {
         location: '',
         arrival: '',
         departure: '',
         airline: ''
-    }],
+    },
     modal: false,
 
 };
@@ -36,24 +37,23 @@ const flightsReducer = (state = initialState, action) => {
 
         //adding a trip
         case types.ADD_TRIP:
-            console.log('whe are we not goign in here', action.payload.values)
+            console.log('BEFORE NEW FLIGHTS', action.payload)
             let newFlights = {
-                location : action.payload.values.location,
-                arrival : action.payload.values.arrival,
-                departure : action.payload.values.departure,
-                airline : action.payload.values.airline,
+                airline : action.payload.airline,
+                location : action.payload.city,
+                arrival : action.payload.arrival,
+                departure : action.payload.departure,
             }
-            console.log('these are the new flights', newFlights)
+            console.log('AFTER NEW FLIGHTS', newFlights)
 
+            //make a copy of the flight info and save it as airline
+            //push airline 
             airline = state.flights.slice();
-            airline.flights.push(newFlights);
+            airline.push(newFlights);
 
             return {
                 ...state,
-                arrival,
-                departure,
-                location,
-                flights,
+                flights : airline,
             };
         
             default: 

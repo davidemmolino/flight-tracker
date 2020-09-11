@@ -34,7 +34,7 @@ class MainContainer extends Component {
         console.log(`props`, this.props)
         return (
             <div >
-                <button onClick={() => this.props.changeModal}>Start!</button>
+                {/* <button onClick={() => this.props.changeModal}>Start!</button> */}
                 <FlightContainers modal={this.props.changeModal}/>
             </div>
         )

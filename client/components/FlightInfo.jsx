@@ -2,12 +2,13 @@ import React from 'react';
 
 
 export default function FlightInfo(props) {
+    // const { details: { }} = props
     return (
         <div className="flight-card">
-            {/* <h1>{this.props.lcoation}</h1>
-            <p>{this.props.arrival}</p>
-            <p>{this.props.departure}</p> */}
-            This is a flight card
+            <p>Location: {props.details.location}</p>
+            <p>Arrival Time: {props.details.arrival}</p>
+            <p>Departure Time: {props.details.departure}</p>
+            <p>Airline: {props.details.airline}</p>
         </div>
     )
 }

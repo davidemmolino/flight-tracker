@@ -3,8 +3,8 @@ import * as types from '../constants/actionTypes'
 //add a trip
 //note sure what kind of payload to enter
 export const addTrip = (values) => ({
-    type: types.ADD_TRIP,
-    payload: values
+        type: types.ADD_TRIP,
+        payload: values
 });
 
 //remote a trip

@@ -6,6 +6,9 @@ class App extends Component {
         return (
             <div className="container">
                 <Wrapper/>
+                <div className="bg1"/>
+                <div className="bg2"/>
+                <div className="bg3"/>
             </div>
         )
     }

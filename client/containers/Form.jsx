@@ -4,24 +4,13 @@ import { Field, reduxForm } from 'redux-form';
 
 let ContactForm = (props) => {
     const { handleSubmit } = props;
-    console.log('this is handle submit', handleSubmit);
     //send POST to server with field inputs
     let sendPost = () => {
-        fetch('/modal', {
-            headers: { "Content-Type": "application/json"},
-            method: "POST",
-            body: JSON.stringify(handleSubmit)
+        props.submitHandler()
+        .then(() => {
+            return props.changeModal()
         })
-        .then((data) => {
-            data.json()
-         })
-        .then((done) => {
-            props.submitHandler(done)
-            props.changeModal()
-            console.log('*****', done)
-            return 
-        })
-        .catch((err) => console.log(`error here`, err))
+        
     }
 
     return (
@@ -59,3 +48,21 @@ ContactForm = reduxForm({
 
 export default ContactForm;
 
+// console.log('this is handle submit', handleSubmit);
+
+// fetch('/modal', {
+//     headers: { "Content-Type": "application/json"},
+//     method: "POST",
+//     //nothing works
+//     body: JSON.stringify(handleSubmit)
+// })
+// .then((data) => {
+//     data.json()
+//  })
+// .then((done) => {
+//     props.submitHandler(done)
+//     props.changeModal()
+//     console.log('*****', done)
+//     return 
+// })
+// .catch((err) => console.log(`error here`, err))
