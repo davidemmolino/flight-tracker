@@ -1,10 +1,8 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-// import Modal from 'react-modal';
 
 let ContactForm = (props) => {
     const { handleSubmit } = props;
-    //send POST to server with field inputs
     let sendPost = () => {
         props.submitHandler()
         .then(() => {

@@ -23,7 +23,6 @@ class FlightContainers extends Component {
     constructor(props) {
         super(props) 
         this.submit = this.submit.bind(this);
-        // this.submitHandler = this.submitHandler.bind(this)
     }
 
     submit(values) {
@@ -32,16 +31,9 @@ class FlightContainers extends Component {
         this.props.addTrip(values)
     }
 
-    // submitHandler(values) {
-    //     console.log(values)
-    // }
-
     render () {
-        //push and render multiple components
         let array = this.props.flights.flights;
         console.log('ARRAY AFTER MAP', array);
-        // let result = ;
-        // console.log('ARRAY AFTER MAP', result);
 
         return (
             <div>

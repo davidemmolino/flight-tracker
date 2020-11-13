@@ -22,19 +22,13 @@ class MainContainer extends Component {
     conditionalRender() {
         this.props.fields === false ? <Welcome /> : <FlightContainers />
     }
-    flightHandler() {
+    // flightHandler() {
         
-    }
-    // should render FlightContainers component aka flight cards
-    //reads data from state
-
-    //onClick opens a modal input form
-
+    // }
     render() {
         console.log(`props`, this.props)
         return (
             <div >
-                {/* <button onClick={() => this.props.changeModal}>Start!</button> */}
                 <FlightContainers modal={this.props.changeModal}/>
             </div>
         )
