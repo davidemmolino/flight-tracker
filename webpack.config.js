@@ -3,7 +3,12 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 // const { NamedModulesPlugin } = require('webpack');
 
 module.exports = {
-    entry: './client/index.js',
+    entry: './client/index.ts',
+    devtools: 'source-map',
+    resolve: {
+      // Add '.ts' and '.tsx' as resolvable extensions.
+      extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"],
+    },
     mode: 'development',
     output: {
         path: path.join(__dirname, '/dist'),
@@ -12,7 +17,8 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.jsx?/,
+                test: /\.tsx?$/,
+                loader: 'ts-loader',
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader', 
@@ -20,6 +26,10 @@ module.exports = {
                         presets: ['@babel/preset-env', '@babel/preset-react']
                     }
                 }
+            },
+            { 
+              test: /\.js$/, 
+              loader: "source-map-loader" 
             },
             {
                 test: /\.s[ac]ss$/i,
