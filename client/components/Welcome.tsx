@@ -1,6 +1,6 @@
-import React from 'react'
+import * as React from 'react';
 
-export default function Welcome() {
+export const Welcome = () => {
     return (
         <div className="welcome">
             <h1>Welcome!</h1>

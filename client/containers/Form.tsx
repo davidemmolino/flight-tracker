@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
 let ContactForm = (props) => {
@@ -35,7 +35,10 @@ let ContactForm = (props) => {
             </div>
             {/* submitted data is passed as JSON object to onSubmit function */}
             {/* submit button should close modal if post req was sent successfully*/}
-            <button type="submit" onClick={(e) => e.preventDefault(), sendPost}>Submit</button>
+            <button type="submit" onClick={(e) => { 
+                e.preventDefault() 
+                return sendPost
+            }}>Submit</button>
         </form>
     )
 }

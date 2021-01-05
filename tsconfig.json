@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "jsx": "react",
+      "strict": true,
+      "sourceMap": true,
+      "noImplicitAny": false,
+      "strictNullChecks": true,
+      "types": [],
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "moduleResolution": "node",
+      "outDir": "lib",
+      "allowJs": true,
+      "target": "es2015"
+    },
+    "include": ["client"]
+  }

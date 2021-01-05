@@ -1,7 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 
-
-export default function FlightInfo(props) {
+export const FlightInfo = (props) => {
     // const { details: { }} = props
     return (
         <div className="flight-card">
