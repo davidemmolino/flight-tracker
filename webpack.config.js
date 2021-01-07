@@ -4,10 +4,9 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './client/index.ts',
-    devtools: 'source-map',
     resolve: {
       // Add '.ts' and '.tsx' as resolvable extensions.
-      extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"],
+      extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js"],
     },
     mode: 'development',
     output: {
@@ -18,7 +17,6 @@ module.exports = {
         rules: [
             {
                 test: /\.tsx?$/,
-                loader: 'ts-loader',
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader', 
@@ -55,7 +53,7 @@ module.exports = {
               },
               {
                 test: /\.svg$/,
-                use: ['@svgr/webpack'],
+                use: ['@svg/webpack'],
               },
         ]
     },
