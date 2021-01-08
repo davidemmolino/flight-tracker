@@ -8,10 +8,6 @@ const mapStateToProps = state => ({
     modal: state.flights.modal
 })
 
-const mapDispatchToProps = dispatch => ({
-    changeModal: () => dispatch(actions.changeModal())
-})
-
 //smart component
 const MainContainer = (props) => {
 
@@ -27,4 +23,4 @@ const MainContainer = (props) => {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(MainContainer);
+export default connect(mapStateToProps, null)(MainContainer);

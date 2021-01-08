@@ -25,8 +25,7 @@ const FlightContainers = (props) => {
         props.addTrip(values)
     }
 
-    let array = props.flights.flights;
-
+    let flightInfo = props.flights;
     return (
         <div>
             <div className="landing-text">
@@ -35,7 +34,7 @@ const FlightContainers = (props) => {
                 <button onClick={() => props.changeModal(props.modal)} className="button-purple">+</button>
             </div>
             <hr/>
-            { array.map((el, i) => <FlightInfo key={i} details={el} />)}
+            { flightInfo.map((el, i) => <FlightInfo key={i} details={el} />)}
             <Modal isOpen={props.modal} ariaHideApp={false} className="modal">
                 <Form onSubmit={submit} submitHandler={submit} changeModal={props.changeModal} addTrip={props.addTrip}/>
             </Modal>
