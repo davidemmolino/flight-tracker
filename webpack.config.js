@@ -3,7 +3,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 // const { NamedModulesPlugin } = require('webpack');
 
 module.exports = {
-    entry: './client/index.ts',
+    entry: './client/index.tsx',
     resolve: {
       // Add '.ts' and '.tsx' as resolvable extensions.
       extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js"],

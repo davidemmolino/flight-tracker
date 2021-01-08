@@ -1,7 +1,7 @@
 //dumb component
 import * as React from 'react';
 import * as actions from '../actions/actions'
-import Form from './Form.jsx';
+import Form from './Form';
 import Modal from 'react-modal';
 import { connect } from 'react-redux';
 import { FlightInfo } from '../components/FlightInfo';
@@ -14,7 +14,7 @@ const mapStateToProps = state => ({
 })
 //referenced using props
 const mapDispatchToProps = dispatch => ({
-    changeModal: () => dispatch(actions.changeModal()),
+    changeModal: (value) => dispatch(actions.changeModal(value)),
     addTrip: (values) => dispatch(actions.addTrip(values))
 })
 
@@ -32,7 +32,7 @@ const FlightContainers = (props) => {
             <div className="landing-text">
                 <h1>Welcome to Flight Tracker!</h1>
                 <p>Start by entering a destination.</p>
-                <button onClick={() => props.changeModal()} className="button-purple">+</button>
+                <button onClick={() => props.changeModal(props.modal)} className="button-purple">+</button>
             </div>
             <hr/>
             { array.map((el, i) => <FlightInfo key={i} details={el} />)}

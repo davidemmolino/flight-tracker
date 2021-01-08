@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as actions from '../actions/actions'
-import FlightContainers from './FlightContainers.js';
+import FlightContainers from './FlightContainers';
 import { connect } from 'react-redux';
 import { Welcome } from '../components/Welcome';
 

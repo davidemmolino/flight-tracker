@@ -1,9 +1,8 @@
 import * as types from '../constants/actionTypes';
-import { initStore } from '../constants/types';
 
 // import { formValueSelector } from 'redux-form';
 
-const initialState: initStore = {
+const initialState = {
     flights: [],
     flightInfo: {
         location: '',
