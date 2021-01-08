@@ -30,7 +30,7 @@ module.exports = {
               loader: "source-map-loader" 
             },
             {
-                test: /\.s[ac]ss$/i,
+                test: /\.(scss|css)$/,
                 use: [
                   // Creates `style` nodes from JS strings
                   'style-loader',
@@ -55,6 +55,13 @@ module.exports = {
                 test: /\.svg$/,
                 use: ['@svg/webpack'],
               },
+              {
+                test: /\.css$/,
+                use: [
+                  'style-loader',
+                  'css-loader'
+                ]
+              }
         ]
     },
     devServer: {
