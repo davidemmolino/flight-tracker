@@ -26,7 +26,7 @@ This is a project that I plan on following standard agile workflow as much as I 
 ## Screenshots
 
 I will add them in the future when I get basic functionality back online. The convertion to Typescript hindered some of it. In the meantime here's an early wireframe screen shot of it. <br>
-![Flight-tracker early stage wireframe](https://imgur.com/a/uYIiNdJ)
+![Flight-tracker early stage wireframe](props\images\wireframe_early_stage.png)
 
 ## Features 
 
