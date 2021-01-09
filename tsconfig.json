@@ -3,7 +3,7 @@
       "jsx": "react",
       "strict": true,
       "sourceMap": true,
-      "noImplicitAny": false,
+      "noImplicitAny": true,
       "strictNullChecks": true,
       "types": [],
       "experimentalDecorators": true,

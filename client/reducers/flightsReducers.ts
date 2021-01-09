@@ -1,5 +1,5 @@
 import * as types from '../constants/actionTypes';
-
+import * from '../types/types.ts';
 // import { formValueSelector } from 'redux-form';
 
 const initialState = {
@@ -38,8 +38,7 @@ const flightsReducer = (state = initialState, action) => {
 
         //adding a trip
         case types.ADD_TRIP:
-            console.log('BEFORE NEW FLIGHTS', action.payload)
-            let newFlights = {
+            let newFlights : newFlights = {
                 airline : action.payload.airline,
                 location : action.payload.city,
                 arrival : action.payload.arrival,

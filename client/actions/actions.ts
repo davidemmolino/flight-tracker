@@ -18,7 +18,7 @@ export const addTrip = (values) => ({
 //     payload: city
 // });
 
-export const changeModal = (modal) => ({
+export const changeModal = (modal: boolean) => ({
     type: types.CHANGE_MODAL,
     payload: modal
 });
