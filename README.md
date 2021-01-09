@@ -37,16 +37,8 @@ You can add cards through a modal.
 
 ### Installation
 
-In one terminal, install dependencies and then start node server.
-
 ```
 npm install
-npm run dev
-```
-
-In a second terminal start your frontend.
-
-```
 npm start
 ```
 
