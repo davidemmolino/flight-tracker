@@ -80,7 +80,7 @@ These are just guidelines, not rules, so use your best judgement and feel free t
 1. Fork it (https://github.com/davidemmolino/flight-tracker)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
-4. Push to the branch (`git push origin feature/fooBar`)
-5. Create a new Pull Request
+4. Push to the staging branch (`git push staging feature/fooBar`)
+5. Create a new Pull Request to main branch
 
 
