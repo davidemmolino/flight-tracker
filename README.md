@@ -54,12 +54,13 @@ Tests are not set up yet. However, I am planning on using Jest, Enzyme, and Reac
 
 ## Plans for the app
 
-- [ ] Adding a solid test suite and CI/CD
-- [ ] I plan on adding a database to have persistent data.
-- [ ] User login screen
-- [ ] User creation option
+- [ ] Adding a solid test suite and CI/CD.
+- [ ] Database to have persistent data.
+- [ ] User login screen.
+- [ ] User creation option.
 - [ ] Authentication and security measures to handle sensitive data.
 - [ ] Adding a feature to add weather reports of destination location.
+- [ ] Migrating to a mobile platform.
 
 **Please, for any other cool ideas please feel free to shoot me an email or create an issue and will go over it!**
 
