@@ -1,15 +1,14 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 const bodyParser = require('body-parser');
 
 //middleware that recognizes an incoming request obj as a JSON obj and makes it into a JS obj.
 app.use(express.json());
 
 //server css style
-app.use('/public', express.static('public')); 
-// app.use('/css', express.static(__dirname + 'public'));
+app.use('/public', express.static('public'));
 app.use('/dist', express.static('dist'))
 
 //serve index.html
@@ -34,9 +33,9 @@ app.use((err, req, res, next) => {
         log: 'express error handler caught unknown middleware error',
         status: 500,
         message: { err: 'An error happened' },
-      };
-      const errorObj = { ...defaultErr, ...err };
-      return res.status(errorObj.status).send(JSON.stringify(errorObj.message));    
+    };
+    const errorObj = { ...defaultErr, ...err };
+    return res.status(errorObj.status).send(JSON.stringify(errorObj.message));
 })
 
 //listening to port
