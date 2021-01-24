@@ -1,0 +1,17 @@
+.app {
+  min-width: 90vw;
+  min-height: 90vh;
+  
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  
+  text-align: center;
+
+  &-header {
+    font-size: calc(10px + 1vmin);
+    color: black;
+  }
+  
+}

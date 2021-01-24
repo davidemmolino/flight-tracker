@@ -5,14 +5,12 @@ import { FlightContainers } from "pages/FlightContainers";
 
 const Routes = () => {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={Welcome} />
-          <Route exact path="/flight" component={FlightContainers} />
-        </Switch>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={Welcome} />
+        <Route exact path="/flight" component={FlightContainers} />
+      </Switch>
+    </BrowserRouter>
   );
 };
 export default Routes;

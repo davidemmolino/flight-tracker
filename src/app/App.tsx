@@ -1,15 +1,15 @@
 import React from 'react';
 
 import Routes from './Routes'
-import logo from 'assets/images/logo.svg';
-import './App.css';
+import './App.scss';
+import MainContainer from 'components/layout/MainContainer';
 
 
 function App() {
   return (
-    <div className="App">
+    <MainContainer className="app">
       <Routes />
-    </div>
+    </MainContainer>
   );
 }
 

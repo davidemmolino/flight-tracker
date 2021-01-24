@@ -1,5 +1,5 @@
 import * as types from 'store/constants/actionTypes';
-import NewFlights from 'types/types.ts';
+import { NewFlights } from 'types/types';
 // import { formValueSelector } from 'redux-form';
 
 const initialState = {
@@ -11,10 +11,14 @@ const initialState = {
         airline: ''
     },
     modal: false,
-
 };
 
-const flightsReducer = (state = initialState, action) => {
+interface ActionType {
+    type: string,
+    payload?: any
+}
+
+const flightsReducer = (state = initialState, action: ActionType) => {
     let airline;
     let location;
     let arrival;
@@ -49,7 +53,7 @@ const flightsReducer = (state = initialState, action) => {
             //make a copy of the flight info and save it as airline
             //push airline 
             airline = state.flights.slice();
-            airline.push(newFlights);
+            // airline.push(newFlights);
 
             return {
                 ...state,

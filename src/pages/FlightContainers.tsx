@@ -1,10 +1,10 @@
 //dumb component
 import React, { FC } from 'react';
 import Modal from 'react-modal';
+import Button from '@material-ui/core/Button';
 import { useSelector } from 'react-redux';
+
 import { FlightInfo } from 'components/common/FlightInfo';
-
-
 import { ContactForm } from 'components/common/Form';
 import * as actions from 'store/actions/actions'
 
@@ -28,7 +28,9 @@ export const FlightContainers: FC<FlightContainerType> = ({ flights, changeModal
             <div className="landing-text">
                 <h1>Welcome to Flight Tracker!</h1>
                 <p>Start by entering a destination.</p>
-                <button onClick={() => changeModal()} className="button-purple">+</button>
+
+
+
             </div>
             <hr />
             { flightInfo.map((el, i) => <FlightInfo key={i} details={el} />)}
