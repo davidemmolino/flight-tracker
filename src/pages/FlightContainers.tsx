@@ -29,17 +29,14 @@ export const FlightContainers: FC<FlightContainerType> = ({ flights, changeModal
                 <h1>Welcome to Flight Tracker!</h1>
                 <p>Start by entering a destination.</p>
 
-
-
+                <hr />
+                {flightInfo.map((el, i) => <FlightInfo key={i} details={el} />)}
+                <Modal isOpen={modal} ariaHideApp={false} className="modal">
+                    <ContactForm
+                        // submitHandler={submit}
+                        // changeModal={changeModal}
+                        addTrip={addTrip} />
+                </Modal>
             </div>
-            <hr />
-            { flightInfo.map((el, i) => <FlightInfo key={i} details={el} />)}
-            <Modal isOpen={modal} ariaHideApp={false} className="modal">
-                <ContactForm
-                    // submitHandler={submit}
-                    // changeModal={changeModal}
-                    addTrip={addTrip} />
-            </Modal>
-        </div>
     )
 }
