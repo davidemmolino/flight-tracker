@@ -25,8 +25,10 @@ This is a project that I plan on following standard agile workflow as much as I 
 
 ## Screenshots
 
-I will add them in the future when I get basic funcionality back online. The convertion to Typescript hindered some of it. In the meantime here's an early wireframe screen shot of it. <br>
-![Flight-tracker early stage wireframe](./props/images/wireframe_early _stage.png)
+I will add them in the future when I get basic functionality back online. The convertion to Typescript hindered some of it. In the meantime here's an early wireframe screen shot of it. 
+<br>
+<br>
+![Flight-tracker early stage wireframe](./props/images/wireframe_early_stage.png)
 
 ## Features 
 
@@ -35,16 +37,8 @@ You can add cards through a modal.
 
 ### Installation
 
-In one terminal, install dependencies and then start node server.
-
 ```
 npm install
-npm run dev
-```
-
-In a second terminal start your frontend.
-
-```
 npm start
 ```
 
@@ -54,12 +48,13 @@ Tests are not set up yet. However, I am planning on using Jest, Enzyme, and Reac
 
 ## Plans for the app
 
-- [ ] Adding a solid test suite and CI/CD
-- [ ] I plan on adding a database to have persistent data.
-- [ ] User login screen
-- [ ] User creation option
+- [ ] Adding a solid test suite and CI/CD.
+- [ ] Database to have persistent data.
+- [ ] User login screen.
+- [ ] User creation option.
 - [ ] Authentication and security measures to handle sensitive data.
 - [ ] Adding a feature to add weather reports of destination location.
+- [ ] Migrating to a mobile platform.
 
 **Please, for any other cool ideas please feel free to shoot me an email or create an issue and will go over it!**
 
@@ -80,7 +75,7 @@ These are just guidelines, not rules, so use your best judgement and feel free t
 1. Fork it (https://github.com/davidemmolino/flight-tracker)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
-4. Push to the branch (`git push origin feature/fooBar`)
-5. Create a new Pull Request
+4. Push to the staging branch (`git push staging feature/fooBar`)
+5. Create a new Pull Request to main branch
 
 
