@@ -1,8 +1,25 @@
 import * as types from '../constants/actionTypes';
-import * from '../types/types.ts';
 // import { formValueSelector } from 'redux-form';
 
-const initialState = {
+type FlightInfo = {
+    location: string
+    arrival: string
+    departure: string
+    airline: string
+}
+
+type InitialState = {
+    modal: boolean,
+    flights: FlightInfo[],
+    flightInfo: {
+        location: '',
+        arrival: '',
+        departure: '',
+        airline: ''
+    }
+};
+
+const initialState: InitialState = {
     flights: [],
     flightInfo: {
         location: '',
@@ -11,7 +28,6 @@ const initialState = {
         airline: ''
     },
     modal: false,
-
 };
 
 const flightsReducer = (state = initialState, action) => {
