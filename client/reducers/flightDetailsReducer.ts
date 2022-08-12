@@ -1,5 +1,11 @@
-import * as types from '../constants/actionTypes';
+import * as types from '../constants/flightDetailTypes';
 // import { formValueSelector } from 'redux-form';
+
+//TODO: Move all the reusable types to the types file
+type Action = {
+    type: string
+    payload: any
+};
 
 type FlightInfo = {
     location: string
@@ -30,7 +36,7 @@ const initialState: InitialState = {
     modal: false,
 };
 
-const flightsReducer = (state = initialState, action) => {
+const flightsReducer = (state = initialState, action: Action) => {
     let airline;
     let location;
     let arrival; 
@@ -38,23 +44,9 @@ const flightsReducer = (state = initialState, action) => {
     let modal = state.modal;
 
     switch(action.type) {
-        //change modal boolean
-        case types.CHANGE_MODAL:
-            console.log(`clicked and opened a modal`)
-            if (state.modal === false) {
-               modal = true 
-            } else {
-                modal = false
-            }
-
-            return {
-                ...state,
-                modal
-            };
-
         //adding a trip
         case types.ADD_TRIP:
-            let newFlights : newFlights = {
+            let newFlights : FlightInfo = {
                 airline : action.payload.airline,
                 location : action.payload.city,
                 arrival : action.payload.arrival,

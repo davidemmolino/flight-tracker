@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
-let ContactForm = (props) => {
+// refactor this for sure
+let FlightInputForm = (props) => {
     const { handleSubmit } = props;
     let sendPost = () => {
         props.submitHandler()

@@ -1,10 +1,10 @@
 //dumb component
 import * as React from 'react';
-import * as actions from '../actions/actions'
-import Form from './Form';
+import * as actions from '../actions/flightDetailsActions'
+import FlightInputForm from './FlightInputForm';
 import Modal from 'react-modal';
 import { connect } from 'react-redux';
-import { FlightInfo } from '../components/FlightInfo';
+import { FlightDetailsCard } from '../components/FlightDetailsCard';
 
 const mapStateToProps = state => ({
     modal: state.flights.modal,
@@ -18,6 +18,7 @@ const mapDispatchToProps = dispatch => ({
     addTrip: (values) => dispatch(actions.addTrip(values))
 })
 
+// this renders a list of flight details cards
 const FlightContainers = (props) => {
 
     const submit = (values) => {
@@ -34,9 +35,9 @@ const FlightContainers = (props) => {
                 <button onClick={() => props.changeModal(props.modal)} className="button-purple">+</button>
             </div>
             <hr/>
-            { flightInfo.map((el, i) => <FlightInfo key={i} details={el} />)}
+            { flightInfo.map((el, i) => <FlightDetailsCard key={i} details={el} />)}
             <Modal isOpen={props.modal} ariaHideApp={false} className="modal">
-                <Form onSubmit={submit} submitHandler={submit} changeModal={props.changeModal} addTrip={props.addTrip}/>
+                <FlightInputForm onSubmit={submit} submitHandler={submit} changeModal={props.changeModal} addTrip={props.addTrip}/>
             </Modal>
         </div>
     )
