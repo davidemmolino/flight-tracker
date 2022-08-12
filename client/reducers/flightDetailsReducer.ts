@@ -1,4 +1,5 @@
 import * as types from '../constants/flightDetailTypes';
+import { FlightInfo } from '../types/types';
 // import { formValueSelector } from 'redux-form';
 
 //TODO: Move all the reusable types to the types file
@@ -6,13 +7,6 @@ type Action = {
     type: string
     payload: any
 };
-
-type FlightInfo = {
-    location: string
-    arrival: string
-    departure: string
-    airline: string
-}
 
 type InitialState = {
     modal: boolean,

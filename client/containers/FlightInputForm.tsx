@@ -1,15 +1,23 @@
 import * as React from 'react';
+import PropTypes, { InferProps } from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
 
-// refactor this for sure
-let FlightInputForm = (props) => {
-    const { handleSubmit } = props;
+const FlightInputFormPropType = {
+    onSubmit: PropTypes.func,
+    submitHandler: PropTypes.func,
+    changeModal: PropTypes.func,
+    addTrip: PropTypes.func
+};
+
+type FlightInput = InferProps<typeof FlightInputFormPropType>;
+
+let FlightInputForm = (props: FlightInput) => {
+    const { submitHandler } = props;
     let sendPost = () => {
-        props.submitHandler()
+        submitHandler()
         .then(() => {
             return props.changeModal()
         })
-        
     }
 
     return (
@@ -44,11 +52,11 @@ let FlightInputForm = (props) => {
     )
 }
 
-ContactForm = reduxForm({
+FlightInputForm = reduxForm({
     form: 'flight-details'
-})(ContactForm)
+})(FlightInputForm)
 
-export default ContactForm;
+export default FlightInputForm;
 
 // console.log('this is handle submit', handleSubmit);
 
