@@ -14,7 +14,9 @@ const initialState: InitialState = {
 };
 
 const modalReducer = (state = initialState, action: Action) => {
-    switch({ action }) {
+    let modal = state.modal;
+    
+    switch(action.type) {
         //change modal boolean
         case types.CHANGE_MODAL:
             console.log(`clicked and opened a modal`)

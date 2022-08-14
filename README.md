@@ -39,7 +39,7 @@ You can add cards through a modal.
 
 ```
 npm install
-npm start
+npm start //alternatively npx webpack --config webpack.config.js
 ```
 
 ## Tests

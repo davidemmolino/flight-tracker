@@ -35,7 +35,6 @@ const flightsReducer = (state = initialState, action: Action) => {
     let location;
     let arrival; 
     let departure;
-    let modal = state.modal;
 
     switch(action.type) {
         //adding a trip

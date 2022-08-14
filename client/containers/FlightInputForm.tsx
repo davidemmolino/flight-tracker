@@ -12,49 +12,50 @@ const FlightInputFormPropType = {
 type FlightInput = InferProps<typeof FlightInputFormPropType>;
 
 let FlightInputForm = (props: FlightInput) => {
-    const { submitHandler } = props;
-    let sendPost = () => {
-        submitHandler()
-        .then(() => {
-            return props.changeModal()
-        })
-    }
+    const { onSubmit } = props;
+    // let sendPost = () => {
+    //     onSubmit()
+    //     .then(() => {
+    //         return props.changeModal()
+    //     })
+    // }
 
     return (
-        <form onSubmit={ handleSubmit }>
-            <div>
-                <label htmlFor="city">City</label>
-                <br/>
-                <Field name="city" component="input" type="text" />
-            </div>
-            <div>
-                <label htmlFor="departure">Departure</label>
-                <br/>
-                <Field name="departure" component="input" type="text" />
-            </div>
-            <div>
-                <label htmlFor="arrival">Arrival</label>
-                <br/>
-                <Field name="arrival" component="input" type="text" />
-            </div>
-            <div>
-                <label htmlFor="airline">Airline</label>
-                <br/>
-                <Field name="airline" component="input" type="text" />
-            </div>
-            {/* submitted data is passed as JSON object to onSubmit function */}
-            {/* submit button should close modal if post req was sent successfully*/}
-            <button type="submit" onClick={(e) => { 
-                e.preventDefault() 
-                return sendPost
-            }}>Submit</button>
-        </form>
+        <>temp</>
+        // <form onSubmit={ submitHandler }>
+        //     <div>
+        //         <label htmlFor="city">City</label>
+        //         <br/>
+        //         <Field name="city" component="input" type="text" />
+        //     </div>
+        //     <div>
+        //         <label htmlFor="departure">Departure</label>
+        //         <br/>
+        //         <Field name="departure" component="input" type="text" />
+        //     </div>
+        //     <div>
+        //         <label htmlFor="arrival">Arrival</label>
+        //         <br/>
+        //         <Field name="arrival" component="input" type="text" />
+        //     </div>
+        //     <div>
+        //         <label htmlFor="airline">Airline</label>
+        //         <br/>
+        //         <Field name="airline" component="input" type="text" />
+        //     </div>
+        //     {/* submitted data is passed as JSON object to onSubmit function */}
+        //     {/* submit button should close modal if post req was sent successfully*/}
+        //     <button type="submit" onClick={(e) => { 
+        //         e.preventDefault() 
+        //         return sendPost
+        //     }}>Submit</button>
+        // </form>
     )
 }
 
-FlightInputForm = reduxForm({
-    form: 'flight-details'
-})(FlightInputForm)
+// FlightInputForm = reduxForm({
+//     form: 'flight-details'
+// })(FlightInputForm)
 
 export default FlightInputForm;
 

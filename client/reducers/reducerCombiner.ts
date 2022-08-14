@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
-import flightsReducers from './flightsReducers';
-import modalReducer from './modalReducers';
+import flightsReducers from './flightDetailsReducer';
+import modalReducer from './modalReducer';
 
 export const rootReducer = combineReducers({
     flights: flightsReducers,

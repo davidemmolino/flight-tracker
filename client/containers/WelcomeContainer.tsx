@@ -1,24 +1,32 @@
 import * as React from 'react';
-import * as actions from '../actions/flightDetailsActions'
 import FlightContainers from './FlightContainers';
+import PropTypes, { InferProps } from 'prop-types';
 import { connect } from 'react-redux';
 import { Welcome } from '../components/Welcome';
+import { RootState } from '../store';
 
-const mapStateToProps = state => ({
+const ModalPropType = {
+    fields: PropTypes.bool,
+    changeModal: PropTypes.func
+};
+
+type ModalType = InferProps<typeof ModalPropType> 
+
+const mapStateToProps = (state: RootState) => ({
     modal: state.flights.modal
 })
 
 //This will check if there are any destinations in store
 //if there are none then display the welcome components else FlightListContainers
-const WelcomeContainer = (props) => {
+const WelcomeContainer = ({ fields, changeModal }: ModalType) => {
 
     const conditionalRender = () => {
-        props.fields === false ? <Welcome /> : <FlightContainers />
+        fields === false ? <Welcome /> : <FlightContainers />
     }
     
     return (
         <div >
-            <FlightContainers modal={props.changeModal}/>
+            <Welcome />
         </div>
     )
 }
