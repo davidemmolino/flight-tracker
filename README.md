@@ -6,7 +6,7 @@ I made an app where a user is able to input their flight details and is able to 
 
 This is a project that I plan on following standard agile workflow as much as I can. Once the app is back to its basic functionality I will started implementing test coverage and CI/CD. If you can help me out with this that would be great! 
 
-## Tech/framework used
+## Tech stack
 
 **Frontend**
 
@@ -26,14 +26,18 @@ This is a project that I plan on following standard agile workflow as much as I 
 ## Screenshots
 
 I will add them in the future when I get basic functionality back online. The convertion to Typescript hindered some of it. In the meantime here's an early wireframe screen shot of it. 
-<br>
-<br>
+
+### Figma Wireframe Prototype
+- https://www.figma.com/file/O3B0ahlcn2SnYKdQUQjwim/Flight-Tracker-Wireframe?node-id=0%3A1
+
 ![Flight-tracker early stage wireframe](./props/images/wireframe_early_stage.png)
 
 ## Features 
 
 At the moment it has almost all CRUD functionality.
 You can add cards through a modal.
+
+API used in this app will be: https://aviationstack.com/
 
 ### Installation
 
